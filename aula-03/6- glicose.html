@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h1>Glicose</h1>
+
+        <p>Parágrafo</p>
+
+        <label for="txt1">Digite quantidade de glicose no sangue:</label>
+
+        <input type="number" id="txtglicose" />
+
+        <button onclick="botao_click()">Botão</button>
+      </div>
+    </div>
+
+    <script>
+      function botao_click() {
+        var glicoseTexto = document.getElementById("txtglicose").value;
+
+        var glicose = parseFloat(glicoseTexto);
+
+        var mensagem = "";
+
+        if (glicose <= 100) {
+          mensagem = "NORMAL";
+        } else if (glicose > 100 && glicose <= 140) {
+          mensagem = "ELEVADO";
+        } else if (glicose > 140) {
+          mensagem = "DIABETES";
+        }
+        alert(mensagem);
+      }
+    </script>
+  </body>
+</html>
